@@ -26,60 +26,31 @@ p{
          grid-template-rows: repeat(6, 1fr);
      }
      #search{
-        /* grid-column:3;
-        grid-row:1/2;
-        height: 2em;
-        margin-top:5px; */
-        float:right;
-        height: 2em;
+     
         
     }
     
      #temp{
-         grid-column: 1;
-         grid-row:1;
-         font-size:10em;
-         margin-top:50px;
-         margin-bottom:0;
+        
       
      }
      #city{
-        grid-column:1/6;
-        grid-row:2;
-        font-size:2em;
-        margin-top:-190;
-        font-weight: 300;
-        margin-left:10px;
-
+    
     } 
       #feels{
-         grid-column:1/6;
-         grid-row:2;
-         margin:0;
-         margin-left:5px;
-         font-weight: 900;
-
+     
 
      }
   
     #description{
-        margin:0;
-        margin-left:5px;
-        grid-row:3;
-        font-weight: 900;
+        
     }
     #humidity{
-        grid-row:4;
-        margin:0;
-        margin-left:5px;
-        font-weight: 900;
+      
 
     }
     #change{
-        grid-row:2;
-        grid-column:2;
-        width:5em;
-        height:3em;
+      
     }
    
  }
