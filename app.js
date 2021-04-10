@@ -1,7 +1,15 @@
-// get the container div
+// // get the container div
+// const container= document.querySelector(".container");
 
-// get the user input
-const userInput = 'Helsinki';
+// get the search area
+const search = document.getElementById('search');
+
+let userInput = 'Bordeaux';
+
+// add an event listener on enter button press
+search.addEventListener('keyup', (e) => {
+  e.keyCode === 13 ? (userInput = search.value) : '';
+});
 
 async function fetchData() {
   const response = await fetch(
@@ -20,6 +28,7 @@ async function fetchData() {
       description: getData.weather[0].description,
       humidity: getData.main.humidity,
     };
+
     console.log(apiObject);
   } catch {
     console.log("Oops. Couldn't find that.");
