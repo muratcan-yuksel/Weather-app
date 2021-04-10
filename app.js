@@ -34,10 +34,10 @@ async function fetchData() {
     document.querySelector(
       '#city'
     ).textContent = `${apiObject.city.toUpperCase()}, ${apiObject.country}`;
-    document.querySelector('#temp').textContent = apiObject.temp;
-    document.querySelector(
-      '#feels'
-    ).textContent = `Feels like: ${apiObject.feels}`;
+    document.querySelector('#temp').textContent = Math.round(apiObject.temp);
+    document.querySelector('#feels').textContent = `Feels like: ${Math.round(
+      apiObject.feels
+    )}`;
     document.querySelector('#description').textContent = apiObject.description;
     document.querySelector(
       '#humidity'
