@@ -8,8 +8,11 @@ let userInput = 'Bordeaux';
 
 // add an event listener on enter button press
 search.addEventListener('keyup', (e) => {
-  e.keyCode === 13 ? (userInput = search.value) : '';
-  fetchData();
+  if (e.keyCode === 13) {
+    userInput = search.value;
+    fetchData();
+  } else {
+  }
 });
 
 async function fetchData() {
