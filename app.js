@@ -1,22 +1,26 @@
-// async function getCats() {
-//     const response = await fetch(
-//       'https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53jS1GC80E&s=dogs',
-//       {
-//         mode: 'cors',
-//       }
-//     );
-//     const catData = await response.json();
-//     img.src = catData.data.images.original.url;
-//   }
-//   getCats();
+// get the user input
+const userInput = 'Helsinki';
 
 async function fetchData() {
   const response = await fetch(
-    'https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=afbfe6a91c7a12e3a8b91f464b95dbbb',
+    `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&units=metric&appid=afbfe6a91c7a12e3a8b91f464b95dbbb`,
     { mode: 'cors' }
   );
-  const apiObject = await response.json();
-  console.log(apiObject);
-  console.log(apiObject.main);
+  try {
+    const getData = await response.json();
+    console.log(getData);
+    console.log(getData.weather[0].description);
+    const apiObject = {
+      city: userInput,
+      country: getData.sys.country,
+      temp: getData.main.temp,
+      feels: getData.main.feels_like,
+      description: getData.weather[0].description,
+      humidity: getData.main.humidity,
+    };
+    console.log(apiObject);
+  } catch {
+    console.log("Oops. Couldn't find that.");
+  }
 }
 fetchData();
