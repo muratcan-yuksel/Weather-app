@@ -1,6 +1,3 @@
-// // get the container div
-// const container= document.querySelector(".container");
-
 // get the search area
 const search = document.getElementById('search');
 
