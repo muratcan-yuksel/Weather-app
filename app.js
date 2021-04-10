@@ -12,11 +12,11 @@
 
 async function fetchData() {
   const response = await fetch(
-    'https://api.openweathermap.org/data/2.5/weather?q=London&appid=afbfe6a91c7a12e3a8b91f464b95dbbb',
+    'https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=afbfe6a91c7a12e3a8b91f464b95dbbb',
     { mode: 'cors' }
   );
   const apiObject = await response.json();
   console.log(apiObject);
-  console.log(apiObject);
+  console.log(apiObject.main);
 }
 fetchData();
