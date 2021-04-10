@@ -9,6 +9,7 @@ let userInput = 'Bordeaux';
 // add an event listener on enter button press
 search.addEventListener('keyup', (e) => {
   e.keyCode === 13 ? (userInput = search.value) : '';
+  fetchData();
 });
 
 async function fetchData() {
@@ -27,11 +28,27 @@ async function fetchData() {
       feels: getData.main.feels_like,
       description: getData.weather[0].description,
       humidity: getData.main.humidity,
+      error: getData.cod.message,
     };
-
+    // write the data
+    document.querySelector(
+      '#city'
+    ).textContent = `${apiObject.city.toUpperCase()}, ${apiObject.country}`;
+    document.querySelector('#temp').textContent = apiObject.temp;
+    document.querySelector(
+      '#feels'
+    ).textContent = `Feels like: ${apiObject.feels}`;
+    document.querySelector('#description').textContent = apiObject.description;
+    document.querySelector(
+      '#humidity'
+    ).textContent = `Humidity: ${apiObject.humidity}`;
     console.log(apiObject);
   } catch {
     console.log("Oops. Couldn't find that.");
+    document.querySelectorAll('.para').forEach((item) => {
+      item.textContent = ' ';
+      document.querySelector('#city').textContent = 'City not found.';
+    });
   }
 }
 fetchData();
