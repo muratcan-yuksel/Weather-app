@@ -1,3 +1,5 @@
+// get the container div
+
 // get the user input
 const userInput = 'Helsinki';
 
