@@ -2,6 +2,8 @@
 const search = document.getElementById('search');
 
 let userInput = 'Bordeaux';
+// give the metric system
+let metric = 'metric';
 
 // add an event listener on enter button press
 search.addEventListener('keyup', (e) => {
@@ -14,7 +16,7 @@ search.addEventListener('keyup', (e) => {
 
 async function fetchData() {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&units=metric&appid=afbfe6a91c7a12e3a8b91f464b95dbbb`,
+    `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&units=${metric}&appid=afbfe6a91c7a12e3a8b91f464b95dbbb`,
     { mode: 'cors' }
   );
   try {
@@ -52,3 +54,17 @@ async function fetchData() {
   }
 }
 fetchData();
+
+const changeBtn = document.getElementById('change');
+
+changeBtn.addEventListener('click', changeTemp);
+
+function changeTemp() {
+  if (metric == 'metric') {
+    metric = 'imperial';
+    fetchData();
+  } else if (metric == 'imperial') {
+    metric = 'metric';
+    fetchData();
+  }
+}
