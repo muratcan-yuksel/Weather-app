@@ -55,6 +55,7 @@ async function fetchData() {
 }
 fetchData();
 
+// The function that changes the temp from celcius to fahrenheit on click
 const changeBtn = document.getElementById('change');
 
 changeBtn.addEventListener('click', changeTemp);
