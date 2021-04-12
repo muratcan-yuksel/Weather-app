@@ -62,9 +62,11 @@ changeBtn.addEventListener('click', changeTemp);
 function changeTemp() {
   if (metric == 'metric') {
     metric = 'imperial';
+    changeBtn.textContent = 'See in Celcius';
     fetchData();
   } else if (metric == 'imperial') {
     metric = 'metric';
+    changeBtn.textContent = 'See in Fahrenheit';
     fetchData();
   }
 }
