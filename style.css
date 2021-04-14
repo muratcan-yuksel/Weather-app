@@ -32,8 +32,7 @@ p{
      grid-column:1;
      margin:0;    
      opacity:0.5;
-     color:white;
-   
+     color:black;   
      
     }
     
@@ -94,8 +93,7 @@ p{
     grid-column:1;
     margin:0;    
     opacity:0.5;
-    color:white;
-    
+    color:black;    
    }
    #city{
     grid-row:2;
@@ -153,7 +151,7 @@ height:3em;
 grid-column:1;
 margin:0;    
 opacity:0.5;
-color:white;
+color:black;
 
 }
 #city{
@@ -212,7 +210,7 @@ height:3em;
 grid-column:1;
 margin:0;    
 opacity:0.5;
-color:white;
+color:black;
 
 }
 #city{

@@ -10,6 +10,7 @@ search.addEventListener('keyup', (e) => {
   if (e.keyCode === 13) {
     userInput = search.value;
     fetchData();
+    search.value = ' ';
   } else {
   }
 });
